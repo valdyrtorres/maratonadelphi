@@ -1,0 +1,32 @@
+unit UnitPedido;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons;
+
+type
+  TFrmPedido = class(TForm)
+    pHeader: TPanel;
+    Label1: TLabel;
+    Panel3: TPanel;
+    btnAcessar: TSpeedButton;
+    Panel1: TPanel;
+    SpeedButton1: TSpeedButton;
+    Panel2: TPanel;
+    SpeedButton2: TSpeedButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPedido: TFrmPedido;
+
+implementation
+
+{$R *.dfm}
+
+end.

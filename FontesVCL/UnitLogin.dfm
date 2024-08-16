@@ -1,6 +1,7 @@
-object Form1: TForm1
+object FrmLogin: TFrmLogin
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'Login'
   ClientHeight = 614
   ClientWidth = 888
@@ -13,9 +14,9 @@ object Form1: TForm1
   TextHeight = 15
   object Image1: TImage
     Left = 0
-    Top = 15
+    Top = 0
     Width = 888
-    Height = 599
+    Height = 614
     Align = alClient
     Center = True
     Picture.Data = {
@@ -57225,28 +57226,213 @@ object Form1: TForm1
       AFD7216862A52CB9B96E03B270763B4937215F5973AA64D392A049306C28EA10
       43BE0B3B9F2B250DC4BAA3DB1C0FFBDF7EFB2DFFF5DBB76FBFFFFECFF7F7D720
       3EC4B205FF7FA01EEF4E70E3BED60000000049454E44AE426082}
-    ExplicitLeft = 312
-    ExplicitTop = 240
-    ExplicitWidth = 105
-    ExplicitHeight = 105
+    ExplicitLeft = -8
+    ExplicitTop = 8
   end
-  object Label1: TLabel
-    Left = 0
-    Top = 0
-    Width = 888
-    Height = 15
-    Align = alTop
-    Caption = 'Label1'
-    ExplicitLeft = 152
-    ExplicitTop = 72
-    ExplicitWidth = 34
-  end
-  object Panel1: TPanel
+  object pLogin: TPanel
     Left = 112
-    Top = 192
+    Top = 80
     Width = 401
-    Height = 281
+    Height = 329
     BevelOuter = bvNone
     TabOrder = 0
+    object Label1: TLabel
+      Left = 0
+      Top = 0
+      Width = 401
+      Height = 47
+      Align = alTop
+      Caption = 'Acessar sua conta.'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -35
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ExplicitWidth = 289
+    end
+    object Label2: TLabel
+      AlignWithMargins = True
+      Left = 0
+      Top = 57
+      Width = 401
+      Height = 21
+      Margins.Left = 0
+      Margins.Top = 10
+      Margins.Right = 0
+      Margins.Bottom = 15
+      Align = alTop
+      Caption = 'Informe seus dados de acesso'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 9733492
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 207
+    end
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 0
+      Top = 103
+      Width = 401
+      Height = 21
+      Margins.Left = 0
+      Margins.Top = 10
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alTop
+      Caption = 'E-mail'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 9733492
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 44
+    end
+    object Label4: TLabel
+      AlignWithMargins = True
+      Left = 0
+      Top = 179
+      Width = 401
+      Height = 21
+      Margins.Left = 0
+      Margins.Top = 10
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alTop
+      Caption = 'E-mail'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 9733492
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 44
+    end
+    object Panel1: TPanel
+      Left = 0
+      Top = 124
+      Width = 401
+      Height = 45
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 5127481
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      object edtEmail: TEdit
+        AlignWithMargins = True
+        Left = 10
+        Top = 10
+        Width = 381
+        Height = 25
+        Margins.Left = 10
+        Margins.Top = 10
+        Margins.Right = 10
+        Margins.Bottom = 10
+        Align = alClient
+        BorderStyle = bsNone
+        Color = 5127481
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        Text = 'valdir@teste.com.br'
+      end
+    end
+    object Panel2: TPanel
+      AlignWithMargins = True
+      Left = 0
+      Top = 200
+      Width = 401
+      Height = 45
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 25
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 5127481
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 1
+      object edtSenha: TEdit
+        AlignWithMargins = True
+        Left = 10
+        Top = 10
+        Width = 381
+        Height = 25
+        Margins.Left = 10
+        Margins.Top = 10
+        Margins.Right = 10
+        Margins.Bottom = 10
+        Align = alClient
+        BorderStyle = bsNone
+        Color = 5127481
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        PasswordChar = '*'
+        TabOrder = 0
+        Text = '12345'
+      end
+    end
+    object Panel3: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 273
+      Width = 395
+      Height = 45
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 16475988
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 2
+      object btnAcessar: TSpeedButton
+        Left = 0
+        Top = 0
+        Width = 395
+        Height = 45
+        Cursor = crHandPoint
+        Align = alClient
+        Caption = 'Acessar'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btnAcessarClick
+        ExplicitLeft = 200
+        ExplicitTop = 8
+        ExplicitWidth = 23
+        ExplicitHeight = 22
+      end
+    end
   end
 end
