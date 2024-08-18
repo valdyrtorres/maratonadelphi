@@ -1,0 +1,32 @@
+unit DataModule.Cliente;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Dataset.Serialize.Config;
+
+type
+  TDmCliente = class(TDataModule)
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCliente: TDmCliente;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDmCliente.DataModuleCreate(Sender: TObject);
+begin
+  TDataSetSerializeConfig.GetInstance.CaseNameDefinition:= cndLower;
+  TDataSetSerializeConfig.GetInstance.Import.DecimalSeparator:= '.';
+end;
+
+end.

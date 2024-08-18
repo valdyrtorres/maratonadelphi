@@ -1,0 +1,45 @@
+unit Controllers.Cliente;
+
+interface
+
+uses Horse, DataModule.Global;
+
+procedure RegistrarRotas;
+procedure Listar(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Inserir(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Editar(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Excluir(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+
+implementation
+
+procedure RegistrarRotas;
+begin
+  THorse.Get('/clientes', Listar);
+  THorse.Post('/clientes', Inserir);
+  THorse.Put('/clientes', Editar);
+  THorse.Delete('/clientes', Excluir);
+end;
+
+procedure Listar(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  Dm: TDm;
+begin
+
+end;
+
+procedure Inserir(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+begin
+  Res.Send('Aqui vou inserir os clientes').Status(200);
+end;
+
+procedure Editar(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+begin
+  Res.Send('Aqui vou editar os clientes').Status(200);
+end;
+
+procedure Excluir(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+begin
+  Res.Send('Aqui vou excluir os clientes').Status(200);
+end;
+
+end.

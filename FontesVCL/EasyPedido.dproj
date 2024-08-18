@@ -148,6 +148,11 @@
             <Form>FrmClienteCad</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="DataModules\DataModule.Cliente.pas">
+            <Form>DmCliente</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

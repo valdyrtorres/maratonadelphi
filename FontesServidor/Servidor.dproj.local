@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/08/17 19:44:52.000.124,=C:\VALDIR\devcode\delphi\delphi12\projects\Unit1.pas</Transaction>
+    <Transaction>2024/08/17 19:45:46.000.947,C:\VALDIR\devcode\delphi\delphi12\projects\Unit1.dfm=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\UnitPrincipal.dfm</Transaction>
+    <Transaction>2024/08/17 19:45:46.000.947,C:\VALDIR\devcode\delphi\delphi12\projects\Unit1.pas=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\UnitPrincipal.pas</Transaction>
+    <Transaction>2024/08/17 19:46:50.000.444,C:\VALDIR\devcode\delphi\delphi12\projects\Project1.dproj=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Servidor.dproj</Transaction>
+    <Transaction>2024/08/17 21:11:32.000.811,=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Unit1.pas</Transaction>
+    <Transaction>2024/08/17 21:12:26.000.775,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Unit1.pas=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Controllers\Controllers.Cliente.pas</Transaction>
+    <Transaction>2024/08/17 21:34:05.000.148,=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Unit1.pas</Transaction>
+    <Transaction>2024/08/17 21:35:36.000.289,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Unit1.dfm=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\DataModules\DataModule.Global.dfm</Transaction>
+    <Transaction>2024/08/17 21:35:36.000.289,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\Unit1.pas=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\DataModules\DataModule.Global.pas</Transaction>
+  </Transactions>
+</BorlandProject>

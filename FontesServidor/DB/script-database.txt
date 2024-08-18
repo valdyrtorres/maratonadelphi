@@ -1,0 +1,59 @@
+create table usuario(
+    id_usuario integer primary key autoincrement,
+    nome  varchar(100),
+    email  varchar(100),
+    senha varchar(100)
+);
+
+
+create table cliente(
+    id_cliente integer primary key autoincrement,
+    nome  varchar(100),
+    endereco  varchar(100),
+    complemento varchar(50),
+    bairro   varchar(50),
+    cidade   varchar(50),
+    uf   varchar(2)
+);
+
+
+insert into usuario(nome, email, senha) values('Heber Stein Mazutti', 'heber@teste.com.br', 'da4fbba11f65b8d62e65b5b441c97c80');
+insert into usuario(nome, email, senha) values('João Antunes dos Santos', 'joão@teste.com.br', 'da4fbba11f65b8d62e65b5b441c97c80');
+insert into usuario(nome, email, senha) values('Maria Gomes Souza', 'maria@teste.com.br', 'da4fbba11f65b8d62e65b5b441c97c80');
+
+
+
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Walmart Brasil', 'Av. Brasil, 5120', 'CJ 120', 'Centro', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('99 Coders', 'Rua Japão, 210', 'CJ 123', 'Liberdade', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Microsoft', 'Av. Interlagos, 150', '', 'Interlagos', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Google Brasil', 'Rua dos Pássaros, 630', '', 'Moema', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Amazon', 'Rua 7 de Setembro, 6085', 'CJ 236', 'Centro', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Fix Engenharia', 'Rua Rui Barbosa, 3651', '', 'Centro', 'Campinas', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Sonda Supermercado', 'Av. Central, 353', '', 'Jardim Italia', 'Campinas', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Mecanica ABC', 'Rua Rui Barbosa, 2000', '', 'Centro', 'Campinas', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('JC Automotivo', 'Rua Ibirapuera, 512', 'Loja 05', 'Jardim Eldorado', 'Ribeirão Preto', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Mix Grãos', 'Alameda Juruá, 688', '', 'Parque Industrial', 'Barueri', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Gráfica Paper', 'Alameda Itaúna, 6523', '', 'Parque Industrial', 'Barueri', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('TechBrasil Sistemas de Segurança', 'Rua Julio Batista, 700', '', 'Parque Brasil', 'Bauru', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Clínica Doutor Saúde', 'Rua das Araras, 9845', '', 'Jardim Perus', 'Bauru', 'SP');
+
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Rio Sul Viagens', 'Av. Catanduva, 6951', '', 'Centro', 'Bauru', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Gavião Transportes LTDA', 'Rua Valentim Gentil, 352', '', 'Centro', 'Bauru', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Petrobras Polo Litoral', 'Av. da Liberdade, 6854', '', 'Parque Industrial', 'Santos', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Banco Itau', 'Rua Marajú, 146', '', 'Centro', 'Bauru', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Apositiva Importações', 'Rua Bocaiúva, 215', '', 'Centro', 'Florianópolis', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Telefonica Brasil SA', 'Avenida Afonso Arinos, 3351', '', 'Centro', 'Campinas', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Ultrapar Participações SA', 'Avenida Brigadeiro Luiz Antonio, 5522', '', 'Jardim Santos', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Seed Tecnologia LTDA', 'Avenida Presidente Juscelino Kubitschek, 2041', '', 'Vila Nova Conceição', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Exxon Mobile Brasil', 'Rua Lauro Muller, 116', '', 'Botafogo', 'Rio de Janeiro', 'RJ');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Vibra Energia', 'Rua Correia Vasques, 250', '', 'Cidade Nova', 'Rio de Janeiro', 'RJ');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('JJC Tecnologia', 'Av. Marginal Direita Tiete, 500', '', 'Vila Jaraguá', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Rotac Sistemas de Segurança', 'Rua Batista Santos, 334', '', 'Parque Brasil', 'Bauru', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Clínica Santa Helena', 'Rua dos Portos, 565', '', 'Jardim Manaus', 'Bauru', 'SP');
+
+
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Super Import Grãos', 'Alameda Ipanema, 688', '', 'Parque Industrial', 'Barueri', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Gráfica Papelão', 'Rua Itubiana, 899', '', 'Parque Brasil', 'Barueri', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Posto Ipiranga', 'Rua Indiana, 1222', '', 'Santo Amaro', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Impulse Tecnologia', 'Av. Tiete, 6584', 'CJ 234', 'Vila Jaraguá', 'São Paulo', 'SP');
+insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('IBT Indústria do Brasil', 'Rua Manaus, 550', 'Galpão 7', 'Vila Industrial', 'São Paulo', 'SP');

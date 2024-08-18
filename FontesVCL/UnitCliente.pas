@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.StorageBin,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids,
-  Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Navigation;
+  Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Navigation,
+  Vcl.Loading;
 
 type
   TFrmCliente = class(TForm)
@@ -20,8 +21,8 @@ type
     btnNovo: TSpeedButton;
     Panel3: TPanel;
     SpeedButton2: TSpeedButton;
-    FDMemTable1: TFDMemTable;
-    DataSource1: TDataSource;
+    TabCliente: TFDMemTable;
+    dsCliente: TDataSource;
     gridClientes: TDBGrid;
     pBusca: TPanel;
     Panel7: TPanel;
@@ -29,8 +30,12 @@ type
     edtBusca: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnNovoClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnBuscaClick(Sender: TObject);
   private
     procedure OpenCadCliente(id_cliente: integer);
+    procedure RefreshClientes;
+    procedure TerminateBusca(Sender: TObject);
     { Private declarations }
   public
     { Public declarations }
@@ -43,11 +48,16 @@ implementation
 
 {$R *.dfm}
 
-uses UnitClienteCad;
+uses UnitClienteCad, DataModule.Cliente;
 
 procedure TFrmCliente.OpenCadCliente(id_cliente: integer);
 begin
     TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
+end;
+
+procedure TFrmCliente.btnBuscaClick(Sender: TObject);
+begin
+  RefreshClientes;
 end;
 
 procedure TFrmCliente.btnNovoClick(Sender: TObject);
@@ -59,6 +69,41 @@ procedure TFrmCliente.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
     Action := TCloseAction.caFree;
     FrmCliente := nil;
+end;
+
+procedure TFrmCliente.FormShow(Sender: TObject);
+begin
+  RefreshClientes;
+end;
+
+procedure TFrmCliente.TerminateBusca(Sender: TObject);
+begin
+  TLoading.Hide;
+
+  // Atualizar a DBGrid...
+  gridClientes.DataSource:= dsCliente;
+
+  if Sender is TThread then
+    if Assigned(TThread(Sender).FatalException) then
+    begin
+      showmessage(Exception(TThread(sender).FatalException).Message);
+      exit;
+    end;
+end;
+
+procedure TFrmCliente.RefreshClientes;
+begin
+  TLoading.Show(Self);
+  TLoading.ExecuteThread(procedure
+  begin
+    sleep(1000);
+
+    // Acessar o servidor...
+    gridClientes.Datasource:= nil;
+    DmCliente.ListarClientes(TabCliente, edtBusca.Text);
+
+  end, TerminateBusca);
+
 end;
 
 end.
