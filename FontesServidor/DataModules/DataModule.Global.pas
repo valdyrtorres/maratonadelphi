@@ -18,10 +18,12 @@ type
     procedure ConnBeforeConnect(Sender: TObject);
   private
     procedure CarregarConfigDB(Connection: TFDConnection);
+
     { Private declarations }
   public
     { Public declarations }
     function ClienteListar(filtro: string): TJsonArray;
+    function ClienteListarId(id_cliente: integer): TJsonObject;
   end;
 
 var
@@ -87,6 +89,27 @@ begin
     qry.Active := True;
 
     Result:= qry.ToJSONArray;
+
+  finally
+    FreeAndNil(qry);
+  end;
+end;
+
+function TDm.ClienteListarId(id_cliente: integer): TJsonObject;
+var
+  qry: TFDQuery;
+begin
+  try
+    qry:= TFDQuery.Create(nil);
+    qry.Connection:= Conn;
+
+    qry.SQL.Add('select *');
+    qry.SQL.Add('from cliente');
+    qry.SQL.Add('where id_cliente = :id_cliente');
+    qry.ParamByName('id_cliente').Value := id_cliente;
+    qry.Active := True;
+
+    Result:= qry.ToJSONObject;
 
   finally
     FreeAndNil(qry);

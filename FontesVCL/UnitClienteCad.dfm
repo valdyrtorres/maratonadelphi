@@ -3,7 +3,7 @@ object FrmClienteCad: TFrmClienteCad
   Top = 0
   BorderStyle = bsNone
   Caption = 'Cliente'
-  ClientHeight = 413
+  ClientHeight = 379
   ClientWidth = 521
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -50,10 +50,90 @@ object FrmClienteCad: TFrmClienteCad
     Font.Style = []
     ParentFont = False
   end
+  object Label1: TLabel
+    AlignWithMargins = True
+    Left = 27
+    Top = 150
+    Width = 126
+    Height = 13
+    Margins.Left = 6
+    AutoSize = False
+    Caption = 'Endere'#231'o'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = 5585461
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    AlignWithMargins = True
+    Left = 371
+    Top = 150
+    Width = 126
+    Height = 13
+    Margins.Left = 6
+    AutoSize = False
+    Caption = 'Complemento'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = 5585461
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    AlignWithMargins = True
+    Left = 27
+    Top = 214
+    Width = 126
+    Height = 13
+    Margins.Left = 6
+    AutoSize = False
+    Caption = 'Bairro'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = 5585461
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    AlignWithMargins = True
+    Left = 187
+    Top = 216
+    Width = 126
+    Height = 13
+    Margins.Left = 6
+    AutoSize = False
+    Caption = 'Cidade'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = 5585461
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel
+    AlignWithMargins = True
+    Left = 427
+    Top = 216
+    Width = 62
+    Height = 13
+    Margins.Left = 6
+    AutoSize = False
+    Caption = 'UF'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = 5585461
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
   object Panel2: TPanel
     AlignWithMargins = True
-    Left = 390
-    Top = 348
+    Left = 388
+    Top = 307
     Width = 110
     Height = 40
     Margins.Left = 0
@@ -63,7 +143,7 @@ object FrmClienteCad: TFrmClienteCad
     BevelOuter = bvNone
     Color = 14869218
     ParentBackground = False
-    TabOrder = 0
+    TabOrder = 6
     object btnCancelar: TSpeedButton
       Left = 0
       Top = 0
@@ -80,14 +160,14 @@ object FrmClienteCad: TFrmClienteCad
       Font.Style = []
       ParentFont = False
       OnClick = btnCancelarClick
-      ExplicitLeft = -6
-      ExplicitTop = -8
+      ExplicitLeft = 2
+      ExplicitTop = 24
     end
   end
   object Panel1: TPanel
     AlignWithMargins = True
-    Left = 268
-    Top = 348
+    Left = 263
+    Top = 307
     Width = 110
     Height = 40
     Margins.Left = 0
@@ -97,7 +177,7 @@ object FrmClienteCad: TFrmClienteCad
     BevelOuter = bvNone
     Color = 16475988
     ParentBackground = False
-    TabOrder = 1
+    TabOrder = 7
     object btnSalvar: TSpeedButton
       Left = 0
       Top = 0
@@ -113,10 +193,7 @@ object FrmClienteCad: TFrmClienteCad
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 72
-      ExplicitTop = 8
-      ExplicitWidth = 23
-      ExplicitHeight = 22
+      ExplicitTop = -17
     end
   end
   object edtNome: TEdit
@@ -131,6 +208,76 @@ object FrmClienteCad: TFrmClienteCad
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    TabOrder = 0
+  end
+  object edtEndereco: TEdit
+    Left = 25
+    Top = 167
+    Width = 337
+    Height = 35
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object edtComplemento: TEdit
+    Left = 369
+    Top = 167
+    Width = 125
+    Height = 35
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
+  end
+  object edtBairro: TEdit
+    Left = 25
+    Top = 233
+    Width = 153
+    Height = 35
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object edtCidade: TEdit
+    Left = 185
+    Top = 233
+    Width = 233
+    Height = 35
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+  end
+  object edtUF: TEdit
+    Left = 425
+    Top = 233
+    Width = 72
+    Height = 35
+    AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
   end
 end

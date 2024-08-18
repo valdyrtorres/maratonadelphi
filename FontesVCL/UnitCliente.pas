@@ -82,6 +82,7 @@ begin
 
   // Atualizar a DBGrid...
   gridClientes.DataSource:= dsCliente;
+  //TabCliente.EnableControls;
 
   if Sender is TThread then
     if Assigned(TThread(Sender).FatalException) then
@@ -93,12 +94,13 @@ end;
 
 procedure TFrmCliente.RefreshClientes;
 begin
-  TLoading.Show(Self);
+  TLoading.Show;
   TLoading.ExecuteThread(procedure
   begin
     sleep(1000);
 
     // Acessar o servidor...
+    //TabCliente.DisableControls;
     gridClientes.Datasource:= nil;
     DmCliente.ListarClientes(TabCliente, edtBusca.Text);
 

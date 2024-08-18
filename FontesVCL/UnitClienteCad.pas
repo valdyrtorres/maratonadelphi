@@ -11,11 +11,21 @@ type
   TFrmClienteCad = class(TForm)
     lblTitulo: TLabel;
     Panel2: TPanel;
-    btnCancelar: TSpeedButton;
     Panel1: TPanel;
-    btnSalvar: TSpeedButton;
     Label2: TLabel;
     edtNome: TEdit;
+    Label1: TLabel;
+    edtEndereco: TEdit;
+    Label3: TLabel;
+    edtComplemento: TEdit;
+    Label4: TLabel;
+    edtBairro: TEdit;
+    Label5: TLabel;
+    edtCidade: TEdit;
+    Label6: TLabel;
+    edtUF: TEdit;
+    btnSalvar: TSpeedButton;
+    btnCancelar: TSpeedButton;
     procedure btnCancelarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
