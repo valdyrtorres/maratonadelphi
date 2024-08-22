@@ -32,11 +32,13 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnBuscaClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
+    { Private declarations }
     procedure OpenCadCliente(id_cliente: integer);
     procedure RefreshClientes;
     procedure TerminateBusca(Sender: TObject);
-    { Private declarations }
+    procedure Editar;
   public
     { Public declarations }
   end;
@@ -52,7 +54,8 @@ uses UnitClienteCad, DataModule.Cliente;
 
 procedure TFrmCliente.OpenCadCliente(id_cliente: integer);
 begin
-    TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
+  TNavigation.ParamInt:= id_cliente;
+  TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
 end;
 
 procedure TFrmCliente.btnBuscaClick(Sender: TObject);
@@ -106,6 +109,20 @@ begin
 
   end, TerminateBusca);
 
+end;
+
+procedure TFrmCliente.Editar;
+begin
+  if TabCliente.RecordCount = 0 then
+    exit;
+
+  OpenCadCliente(TabCliente.FieldByName('id_cliente').AsInteger);
+  //OpenCadCliente(TabCliente.Fields[0].AsInteger);
+end;
+
+procedure TFrmCliente.SpeedButton2Click(Sender: TObject);
+begin
+  Editar;
 end;
 
 end.

@@ -15,6 +15,7 @@ type
   public
     { Public declarations }
     procedure ListarClientes(MemTable: TFDMemTable; filtro: string);
+    procedure ListarClienteId(MemTable: TFDMemTable; id_cliente: integer);
   end;
 
 var
@@ -39,6 +40,21 @@ begin
   resp:= TRequest.New.BaseURL('http://localhost:3000')
                  .Resource('/clientes')
                  .AddParam('filtro', filtro)
+                 .Accept('application/json')
+                 .Adapters(TDataSetSerializeAdapter.New(MemTable))
+                 .Get;
+
+  if resp.StatusCode <> 200 then
+    raise Exception.Create(resp.Content);
+end;
+
+procedure TDmCliente.ListarClienteId(MemTable: TFDMemTable; id_cliente: integer);
+var
+  resp: IResponse;
+begin
+  resp:= TRequest.New.BaseURL('http://localhost:3000')
+                 .Resource('/clientes')
+                 .ResourceSuffix(id_cliente.ToString)
                  .Accept('application/json')
                  .Adapters(TDataSetSerializeAdapter.New(MemTable))
                  .Get;
