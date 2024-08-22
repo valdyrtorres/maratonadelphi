@@ -2,8 +2,8 @@ object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Easy Pedido'
-  ClientHeight = 577
-  ClientWidth = 941
+  ClientHeight = 616
+  ClientWidth = 1083
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object FrmPrincipal: TFrmPrincipal
     Left = 0
     Top = 0
     Width = 200
-    Height = 577
+    Height = 616
     Cursor = crHandPoint
     CloseStyle = svcCompact
     Color = 5585461
@@ -257,7 +257,7 @@ object FrmPrincipal: TFrmPrincipal
       Left = 0
       Top = 55
       Width = 200
-      Height = 522
+      Height = 561
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -307,7 +307,7 @@ object FrmPrincipal: TFrmPrincipal
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -19
+      Font.Height = -17
       Font.Name = 'Segoe UI'
       Font.Style = []
       HotButtonColor = 6969943
@@ -321,7 +321,7 @@ object FrmPrincipal: TFrmPrincipal
     Left = 200
     Top = 0
     Width = 0
-    Height = 577
+    Height = 616
     Cursor = crHandPoint
     Color = 6969943
     CompactWidth = 0
@@ -339,12 +339,12 @@ object FrmPrincipal: TFrmPrincipal
       Left = 0
       Top = 0
       Width = 0
-      Height = 55
+      Height = 54
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
-        Left = 16
+        Left = 15
         Top = 16
         Width = 84
         Height = 25
@@ -358,9 +358,9 @@ object FrmPrincipal: TFrmPrincipal
       end
       object btnCloseSub: TSpeedButton
         Left = 144
-        Top = 0
-        Width = 55
-        Height = 55
+        Top = 5
+        Width = 51
+        Height = 48
         ImageIndex = 9
         Images = ImageList
         Flat = True
@@ -370,9 +370,9 @@ object FrmPrincipal: TFrmPrincipal
     object CategorySubmenuButtons: TCategoryButtons
       AlignWithMargins = True
       Left = 0
-      Top = 55
+      Top = 54
       Width = 0
-      Height = 522
+      Height = 562
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
@@ -404,7 +404,7 @@ object FrmPrincipal: TFrmPrincipal
         end>
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -19
+      Font.Height = -17
       Font.Name = 'Segoe UI'
       Font.Style = []
       HotButtonColor = 6969943
@@ -417,8 +417,9 @@ object FrmPrincipal: TFrmPrincipal
   object pTela: TPanel
     Left = 200
     Top = 0
-    Width = 741
-    Height = 577
+    Width = 883
+    Height = 616
+    Cursor = crHandPoint
     Align = alClient
     Color = 16051947
     ParentBackground = False
@@ -426,7 +427,7 @@ object FrmPrincipal: TFrmPrincipal
     object pNavbar: TPanel
       Left = 1
       Top = 1
-      Width = 739
+      Width = 881
       Height = 50
       Align = alTop
       BevelOuter = bvNone
@@ -434,7 +435,7 @@ object FrmPrincipal: TFrmPrincipal
       ParentBackground = False
       TabOrder = 0
       object Image2: TImage
-        Left = 524
+        Left = 666
         Top = 0
         Width = 45
         Height = 50
@@ -474,12 +475,11 @@ object FrmPrincipal: TFrmPrincipal
           39F5E6AB0E504A37199B4F19705855E46A3300EC45D27EB257417BE02FDA039E
           310196154BB3AC9C156459FE6D7DD6DB6FBCC5EBF54E89686F144705ECBAD12A
           DF1F13E04597970EF018BFCB8530FBFD43280000000049454E44AE426082}
-        ExplicitLeft = 527
-        ExplicitTop = -1
+        ExplicitLeft = 606
       end
       object Image3: TImage
         AlignWithMargins = True
-        Left = 469
+        Left = 611
         Top = 0
         Width = 45
         Height = 50
@@ -609,10 +609,10 @@ object FrmPrincipal: TFrmPrincipal
           6B29D8F7793EF5FBAFC5F5172E7C3957B7B6E3E570339E97FB5075F360CE0A94
           0F19C6DFE7775DE09685C3CAA3DCC3BB51F40066BAE4054F427771C7BBC1FC0B
           BF2A54E1F6CD16A70000000049454E44AE426082}
-        ExplicitLeft = 464
+        ExplicitLeft = 606
       end
       object pUsuario: TPanel
-        Left = 569
+        Left = 711
         Top = 0
         Width = 170
         Height = 50
@@ -625,31 +625,35 @@ object FrmPrincipal: TFrmPrincipal
           Left = 0
           Top = 0
           Width = 170
-          Height = 21
+          Height = 27
+          Margins.Top = 20
           Align = alTop
-          Caption = 'lblNome'
+          AutoSize = False
+          Caption = 'Valdir Torres Borges'
           Font.Charset = ANSI_CHARSET
           Font.Color = 5585461
           Font.Height = -16
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitWidth = 60
+          Layout = tlBottom
+          ExplicitLeft = 6
+          ExplicitTop = -6
         end
         object lblEmail: TLabel
           Left = 0
-          Top = 21
+          Top = 27
           Width = 170
           Height = 17
           Align = alTop
-          Caption = 'lblEmail'
+          Caption = 'valdir@teste111.com.br'
           Font.Charset = ANSI_CHARSET
           Font.Color = 9733492
           Font.Height = -13
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitWidth = 45
+          ExplicitWidth = 137
         end
       end
     end
@@ -657,8 +661,8 @@ object FrmPrincipal: TFrmPrincipal
       AlignWithMargins = True
       Left = 31
       Top = 71
-      Width = 679
-      Height = 505
+      Width = 821
+      Height = 544
       Margins.Left = 30
       Margins.Top = 20
       Margins.Right = 30
@@ -675,8 +679,8 @@ object FrmPrincipal: TFrmPrincipal
     DrawingStyle = dsTransparent
     Height = 32
     Width = 32
-    Left = 72
-    Top = 408
+    Left = 88
+    Top = 472
     Bitmap = {
       494C01010A001800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000008000000060000000010020000000000000C0

@@ -3,8 +3,8 @@ object FrmLogin: TFrmLogin
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Login'
-  ClientHeight = 614
-  ClientWidth = 888
+  ClientHeight = 679
+  ClientWidth = 1028
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +15,8 @@ object FrmLogin: TFrmLogin
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 888
-    Height = 614
+    Width = 1028
+    Height = 679
     Align = alClient
     Center = True
     Picture.Data = {
@@ -57226,36 +57226,58 @@ object FrmLogin: TFrmLogin
       AFD7216862A52CB9B96E03B270763B4937215F5973AA64D392A049306C28EA10
       43BE0B3B9F2B250DC4BAA3DB1C0FFBDF7EFB2DFFF5DBB76FBFFFFECFF7F7D720
       3EC4B205FF7FA01EEF4E70E3BED60000000049454E44AE426082}
-    ExplicitLeft = -8
-    ExplicitTop = 8
+    ExplicitLeft = 328
+    ExplicitTop = 208
+    ExplicitWidth = 105
+    ExplicitHeight = 105
   end
   object pLogin: TPanel
     Left = 112
-    Top = 80
-    Width = 401
-    Height = 329
+    Top = 168
+    Width = 377
+    Height = 337
     BevelOuter = bvNone
     TabOrder = 0
     object Label1: TLabel
       Left = 0
       Top = 0
-      Width = 401
+      Width = 377
       Height = 47
       Align = alTop
       Caption = 'Acessar sua conta.'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -35
-      Font.Name = 'Segoe UI Semibold'
+      Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitWidth = 289
+      ExplicitWidth = 300
     end
     object Label2: TLabel
       AlignWithMargins = True
       Left = 0
+      Top = 108
+      Width = 377
+      Height = 21
+      Margins.Left = 0
+      Margins.Top = 15
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alTop
+      Caption = 'E-mail'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 9733492
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ExplicitWidth = 44
+    end
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 0
       Top = 57
-      Width = 401
+      Width = 377
       Height = 21
       Margins.Left = 0
       Margins.Top = 10
@@ -57271,34 +57293,14 @@ object FrmLogin: TFrmLogin
       ParentFont = False
       ExplicitWidth = 207
     end
-    object Label3: TLabel
-      AlignWithMargins = True
-      Left = 0
-      Top = 103
-      Width = 401
-      Height = 21
-      Margins.Left = 0
-      Margins.Top = 10
-      Margins.Right = 0
-      Margins.Bottom = 0
-      Align = alTop
-      Caption = 'E-mail'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = 9733492
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      ExplicitWidth = 44
-    end
     object Label4: TLabel
       AlignWithMargins = True
       Left = 0
-      Top = 179
-      Width = 401
+      Top = 189
+      Width = 377
       Height = 21
       Margins.Left = 0
-      Margins.Top = 10
+      Margins.Top = 15
       Margins.Right = 0
       Margins.Bottom = 0
       Align = alTop
@@ -57313,25 +57315,51 @@ object FrmLogin: TFrmLogin
     end
     object Panel1: TPanel
       Left = 0
-      Top = 124
-      Width = 401
+      Top = 280
+      Width = 377
+      Height = 45
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 16475988
+      ParentBackground = False
+      TabOrder = 0
+      object btnAcessar: TSpeedButton
+        Left = 0
+        Top = 0
+        Width = 377
+        Height = 45
+        Cursor = crHandPoint
+        Align = alClient
+        Caption = 'Acessar'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -19
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btnAcessarClick
+        ExplicitLeft = 72
+        ExplicitTop = 8
+        ExplicitWidth = 23
+        ExplicitHeight = 22
+      end
+    end
+    object Panel2: TPanel
+      Left = 0
+      Top = 129
+      Width = 377
       Height = 45
       Align = alTop
       BevelOuter = bvNone
       Color = 5127481
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Segoe UI'
-      Font.Style = []
       ParentBackground = False
-      ParentFont = False
-      TabOrder = 0
+      TabOrder = 1
       object edtEmail: TEdit
         AlignWithMargins = True
         Left = 10
         Top = 10
-        Width = 381
+        Width = 357
         Height = 25
         Margins.Left = 10
         Margins.Top = 10
@@ -57350,11 +57378,11 @@ object FrmLogin: TFrmLogin
         Text = 'valdir@teste.com.br'
       end
     end
-    object Panel2: TPanel
+    object Panel3: TPanel
       AlignWithMargins = True
       Left = 0
-      Top = 200
-      Width = 401
+      Top = 210
+      Width = 377
       Height = 45
       Margins.Left = 0
       Margins.Top = 0
@@ -57363,19 +57391,13 @@ object FrmLogin: TFrmLogin
       Align = alTop
       BevelOuter = bvNone
       Color = 5127481
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Segoe UI'
-      Font.Style = []
       ParentBackground = False
-      ParentFont = False
-      TabOrder = 1
+      TabOrder = 2
       object edtSenha: TEdit
         AlignWithMargins = True
         Left = 10
         Top = 10
-        Width = 381
+        Width = 357
         Height = 25
         Margins.Left = 10
         Margins.Top = 10
@@ -57395,44 +57417,20 @@ object FrmLogin: TFrmLogin
         Text = '12345'
       end
     end
-    object Panel3: TPanel
-      AlignWithMargins = True
-      Left = 3
-      Top = 273
-      Width = 395
-      Height = 45
-      Align = alTop
-      BevelOuter = bvNone
-      Color = 16475988
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentBackground = False
-      ParentFont = False
-      TabOrder = 2
-      object btnAcessar: TSpeedButton
-        Left = 0
-        Top = 0
-        Width = 395
-        Height = 45
-        Cursor = crHandPoint
-        Align = alClient
-        Caption = 'Acessar'
-        Flat = True
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -19
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        OnClick = btnAcessarClick
-        ExplicitLeft = 200
-        ExplicitTop = 8
-        ExplicitWidth = 23
-        ExplicitHeight = 22
-      end
-    end
+  end
+  object TabUsuario: TFDMemTable
+    FieldDefs = <>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvPersistent, rvSilentMode]
+    ResourceOptions.Persistent = True
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 608
+    Top = 56
   end
 end

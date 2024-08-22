@@ -77,6 +77,7 @@ object FrmCliente: TFrmCliente
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        OnClick = btnAcessarClick
         ExplicitLeft = 72
         ExplicitTop = 8
         ExplicitWidth = 23
@@ -257,12 +258,13 @@ object FrmCliente: TFrmCliente
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnDblClick = gridClientesDblClick
     Columns = <
       item
         Expanded = False
         FieldName = 'id_cliente'
         Title.Caption = 'Id. Cliente'
-        Title.Color = clWhite
+        Title.Color = 5585461
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
         Title.Font.Height = -19
@@ -361,7 +363,7 @@ object FrmCliente: TFrmCliente
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 616
+    Left = 624
     Top = 272
   end
   object dsCliente: TDataSource

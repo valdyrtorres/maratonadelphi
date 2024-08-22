@@ -26,17 +26,23 @@ implementation
 uses Horse,
      Horse.Jhonson,
      Horse.CORS,
-     Controllers.Cliente;
+     Controllers.Cliente,
+     Controllers.Produto,
+     Controllers.Usuario,
+     Controllers.Pedido;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
-  THorse.Use(Jhonson());
-  THorse.Use(CORS);
+    THorse.Use(Jhonson());
+    THorse.Use(CORS);
 
-  Controllers.Cliente.RegistrarRotas;
+    Controllers.Cliente.RegistrarRotas;
+    Controllers.Produto.RegistrarRotas;
+    Controllers.Usuario.RegistrarRotas;
+    Controllers.Pedido.RegistrarRotas;
 
-  THorse.Listen(3000);
-  lblServer.Caption := 'Servidor rodando na porta: ' +  Thorse.Port.ToString;
+    THorse.Listen(3000);
+    lblServer.Caption := 'Servidor rodando na porta: ' + THorse.Port.ToString;
 end;
 
 end.

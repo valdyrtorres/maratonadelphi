@@ -1,10 +1,10 @@
 object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Sevidor Easy Pedido'
-  ClientHeight = 255
-  ClientWidth = 470
-  Color = clBtnFace
+  Caption = 'Servidor Easy Pedido'
+  ClientHeight = 220
+  ClientWidth = 414
+  Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -14,7 +14,7 @@ object FrmPrincipal: TFrmPrincipal
   TextHeight = 15
   object lblServer: TLabel
     Left = 24
-    Top = 24
+    Top = 40
     Width = 265
     Height = 30
     Caption = 'Servidor rodando na porta: 0'

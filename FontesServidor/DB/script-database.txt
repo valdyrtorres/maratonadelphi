@@ -16,6 +16,35 @@ create table cliente(
     uf   varchar(2)
 );
 
+create table produto(
+    id_produto integer primary key autoincrement,
+    descricao  varchar(100),
+	preco      decimal(9,2)
+);
+
+create table pedido(
+    id_pedido    integer primary key autoincrement,
+	id_usuario   integer,
+	id_cliente   integer,    
+	dt_pedido    datetime,
+	vl_total     decimal(9,2),
+	
+	FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+	FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente)
+);
+
+create table pedido_item(
+    id_item      integer primary key autoincrement,
+    id_pedido    integer,
+	id_produto   integer,
+	qtd          integer,
+	vl_unitario  decimal(9,2),
+	vl_total     decimal(9,2),
+	
+	FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido),
+	FOREIGN KEY (id_produto) REFERENCES produto(id_produto)
+);
+
 
 insert into usuario(nome, email, senha) values('Heber Stein Mazutti', 'heber@teste.com.br', 'da4fbba11f65b8d62e65b5b441c97c80');
 insert into usuario(nome, email, senha) values('João Antunes dos Santos', 'joão@teste.com.br', 'da4fbba11f65b8d62e65b5b441c97c80');
@@ -57,3 +86,40 @@ insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Gr�
 insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Posto Ipiranga', 'Rua Indiana, 1222', '', 'Santo Amaro', 'São Paulo', 'SP');
 insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('Impulse Tecnologia', 'Av. Tiete, 6584', 'CJ 234', 'Vila Jaraguá', 'São Paulo', 'SP');
 insert into cliente(NOME, ENDERECO, complemento, bairro, CIDADE, uf) VALUES('IBT Indústria do Brasil', 'Rua Manaus, 550', 'Galpão 7', 'Vila Industrial', 'São Paulo', 'SP');
+
+
+insert into produto(descricao, preco) values('Monitor Gamer 22"', 450);
+insert into produto(descricao, preco) values('Tablet Samsung Galaxy', 890);
+insert into produto(descricao, preco) values('Monitor Gamer AOC', 600);
+insert into produto(descricao, preco) values('Epson EcoTank L3250', 499);
+insert into produto(descricao, preco) values('Mochila Transversal Lenovo', 160);
+insert into produto(descricao, preco) values('Notebook Acer Aspire5 A515', 4200);
+insert into produto(descricao, preco) values('Mouse sem fio Logitech M280', 155);
+insert into produto(descricao, preco) values('Monitor LG 19.5" LED HD', 420);
+insert into produto(descricao, preco) values('Notebook Dell Inspiron I15-I120K-A20', 4150);
+insert into produto(descricao, preco) values('Galaxy Tab A9+ 5G, Grafite, Tela 11"', 2190);
+insert into produto(descricao, preco) values('Teclado e mouse sem fio Dell Pro', 99);
+insert into produto(descricao, preco) values('Mochila Targus 15.6" Intellect Essentials', 110);
+insert into produto(descricao, preco) values('Geonav Cabo USB-C (tipo C) para USB', 60);
+insert into produto(descricao, preco) values('Impressora Multifuncional HP Smart Tank 581', 159);
+insert into produto(descricao, preco) values('Headset Gamer, Headphone, fone de ouvido com microfone', 89);
+insert into produto(descricao, preco) values('HD SSD 480GB Sata3 WD Western Digital', 350);
+insert into produto(descricao, preco) values('Cabo Apple USB-C para Lightning', 110);
+insert into produto(descricao, preco) values('Case para Notebook até 15.6" Lenovo', 125);
+insert into produto(descricao, preco) values('Headset Redragon Sem Fio Zeus Pro', 99);
+insert into produto(descricao, preco) values('Suporte Articulado de Mesa com Pistão a Gás', 320);
+insert into produto(descricao, preco) values('Mouse Pad Grande 70 X 30 Cm Gamer', 50);
+insert into produto(descricao, preco) values('Teclado sem fio Logitech Pebble Keys 2', 120);
+insert into produto(descricao, preco) values('Pen Drive Twist 64GB USB Leitura 10MB/s', 59);
+insert into produto(descricao, preco) values('Microsoft OFFICE 365 Personal', 199);
+insert into produto(descricao, preco) values('Mouse Dell WM126', 89);
+insert into produto(descricao, preco) values('Notebook ASUS Vivobook 15, AMD Ryzen 5', 6210);
+insert into produto(descricao, preco) values('Mouse Pad Grande 70 X 30 Cm Gamer', 45);
+insert into produto(descricao, preco) values('Adaptador Bluetooth para PC, receptor de dongle Bluetooth 5.0', 19);
+insert into produto(descricao, preco) values('Webcam Full HD Logitech C922 Pro Stream', 499);
+insert into produto(descricao, preco) values('Notebook ASUS Vivobook Go 15, Intel Core i3', 3999);
+insert into produto(descricao, preco) values('Expansor Hub Usb 3.0 4 Portas Com Led Super Rápido 5.0 Gbps', 140);
+insert into produto(descricao, preco) values('Case para HD transparente, Usb 3.0', 65);
+insert into produto(descricao, preco) values('Suporte de Mesa Portátil para Notebook', 149);
+insert into produto(descricao, preco) values('Adaptador Usb Tipo C Para Micro Usb P/ Mi A1', 37);
+

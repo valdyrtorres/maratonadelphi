@@ -4,9 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.ImageList, Vcl.ImgList,
-  Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, Vcl.WinXCtrls,
-  Vcl.CategoryButtons, Vcl.StdCtrls, Vcl.Session, Vcl.Navigation;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.Buttons, Vcl.WinXCtrls, System.ImageList, Vcl.ImgList, Vcl.CategoryButtons,
+  Vcl.StdCtrls, Vcl.Session, Vcl.Navigation;
 
 type
   TFrmPrincipal = class(TForm)
@@ -32,12 +32,12 @@ type
     procedure btnMenuClick(Sender: TObject);
     procedure btnCloseSubClick(Sender: TObject);
     procedure CategoryMenuButtonsCategories0Items2Click(Sender: TObject);
-    procedure CloseSubMenu;
     procedure CategoryMenuButtonsCategories0Items5Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure CategoryMenuButtonsCategories0Items1Click(Sender: TObject);
     procedure CategorySubmenuButtonsCategories0Items0Click(Sender: TObject);
   private
+    procedure CloseSubMenu;
     { Private declarations }
   public
     { Public declarations }
@@ -54,54 +54,56 @@ uses UnitPedido, UnitCliente;
 
 procedure TFrmPrincipal.btnCloseSubClick(Sender: TObject);
 begin
-  CloseSubMenu;
+    CloseSubMenu;
 end;
 
 procedure TFrmPrincipal.btnMenuClick(Sender: TObject);
 begin
-  sMenu.Opened := NOT sMenu.Opened;
+    sMenu.Opened := NOT sMenu.Opened;
 end;
 
 procedure TFrmPrincipal.CloseSubMenu;
 begin
-  if sSubMenu.Opened then
-  begin
-    sSubMenu.Opened := false;
-    CategorySubmenuButtons.SelectedItem := nil;
-    sMenu.SetFocus;
-  end;
+    if sSubMenu.Opened then
+    begin
+        sSubMenu.Opened := false;
+        CategorySubmenuButtons.SelectedItem := nil;
+        sMenu.SetFocus;
+    end;
 end;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
-  lblNome.Caption := TSession.NOME;
-  lblEmail.Caption := TSession.EMAIL;
+    lblNome.Caption := TSession.NOME;
+    lblEmail.Caption := TSession.EMAIL;
 end;
 
 procedure TFrmPrincipal.CategoryMenuButtonsCategories0Items1Click(
   Sender: TObject);
 begin
-  CloseSubMenu;
-  TNavigation.Open(TFrmPedido, FrmPedido, pContainer);
+    CloseSubMenu;
+    TNavigation.Open(TFrmPedido, FrmPedido, pContainer);
 end;
 
 procedure TFrmPrincipal.CategorySubmenuButtonsCategories0Items0Click(
   Sender: TObject);
 begin
-  CloseSubMenu;
-  TNavigation.Open(TFrmCliente, FrmCliente, pContainer);
+    CloseSubMenu;
+    TNavigation.Open(TFrmCliente, FrmCliente, pContainer);
 end;
+
 
 procedure TFrmPrincipal.CategoryMenuButtonsCategories0Items2Click(
   Sender: TObject);
 begin
-  sSubMenu.Opened := true;
+    sSubMenu.Opened := true;
 end;
 
 procedure TFrmPrincipal.CategoryMenuButtonsCategories0Items5Click(
   Sender: TObject);
 begin
-  Application.Terminate;
+    Application.Terminate;
 end;
+
 
 end.

@@ -33,12 +33,16 @@ type
     procedure FormShow(Sender: TObject);
     procedure btnBuscaClick(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure btnAcessarClick(Sender: TObject);
+    procedure gridClientesDblClick(Sender: TObject);
   private
-    { Private declarations }
+    bookmark: TBookmark;
     procedure OpenCadCliente(id_cliente: integer);
     procedure RefreshClientes;
     procedure TerminateBusca(Sender: TObject);
     procedure Editar;
+    procedure TerminateDelete(Sender: TObject);
+    { Private declarations }
   public
     { Public declarations }
   end;
@@ -54,13 +58,44 @@ uses UnitClienteCad, DataModule.Cliente;
 
 procedure TFrmCliente.OpenCadCliente(id_cliente: integer);
 begin
-  TNavigation.ParamInt:= id_cliente;
-  TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
+    TNavigation.ExecuteOnClose := RefreshClientes;
+    TNavigation.ParamInt := id_cliente;
+    TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
+end;
+
+procedure TFrmCliente.TerminateDelete(Sender: TObject);
+begin
+    TLoading.Hide;
+
+    if Sender is TThread then
+        if Assigned(TThread(Sender).FatalException) then
+        begin
+            showmessage(Exception(TThread(sender).FatalException).Message);
+            exit;
+        end;
+
+    RefreshClientes;
+end;
+
+procedure TFrmCliente.btnAcessarClick(Sender: TObject);
+begin
+    if TabCliente.RecordCount = 0 then
+        exit;
+
+    if MessageDlg('Deseja excluir o cliente selecionado?', TMsgDlgType.mtConfirmation,
+                [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo], 0) = mrYes then
+    begin
+        TLoading.Show;
+        TLoading.ExecuteThread(procedure
+        begin
+            DmCliente.Excluir(TabCliente.FieldByName('id_cliente').AsInteger);
+        end, TerminateDelete);
+    end;
 end;
 
 procedure TFrmCliente.btnBuscaClick(Sender: TObject);
 begin
-  RefreshClientes;
+    RefreshClientes;
 end;
 
 procedure TFrmCliente.btnNovoClick(Sender: TObject);
@@ -76,53 +111,65 @@ end;
 
 procedure TFrmCliente.FormShow(Sender: TObject);
 begin
-  RefreshClientes;
+    RefreshClientes;
+end;
+
+procedure TFrmCliente.gridClientesDblClick(Sender: TObject);
+begin
+    Editar;
 end;
 
 procedure TFrmCliente.TerminateBusca(Sender: TObject);
 begin
-  TLoading.Hide;
+    TLoading.Hide;
+    gridClientes.DataSource := dsCliente;
+    //TabCliente.EnableControls;
 
-  // Atualizar a DBGrid...
-  gridClientes.DataSource:= dsCliente;
-  //TabCliente.EnableControls;
 
-  if Sender is TThread then
-    if Assigned(TThread(Sender).FatalException) then
-    begin
-      showmessage(Exception(TThread(sender).FatalException).Message);
-      exit;
-    end;
+    if Sender is TThread then
+        if Assigned(TThread(Sender).FatalException) then
+        begin
+            showmessage(Exception(TThread(sender).FatalException).Message);
+            exit;
+        end;
+
+    if bookmark <> nil then
+        try
+            gridClientes.DataSource.DataSet.GotoBookmark(bookmark);
+            bookmark := nil;
+        except
+        end;
 end;
 
 procedure TFrmCliente.RefreshClientes;
 begin
-  TLoading.Show;
-  TLoading.ExecuteThread(procedure
-  begin
-    sleep(1000);
+    TLoading.Show;
 
-    // Acessar o servidor...
-    //TabCliente.DisableControls;
-    gridClientes.Datasource:= nil;
-    DmCliente.ListarClientes(TabCliente, edtBusca.Text);
+    TLoading.ExecuteThread(procedure
+    begin
+        sleep(800);
 
-  end, TerminateBusca);
+        // Acessar o servidor...
+        //TabCliente.DisableControls;
+        gridClientes.DataSource := nil;
+        DmCliente.ListarClientes(TabCliente, edtBusca.Text);
+    end,
+    TerminateBusca);
 
 end;
 
 procedure TFrmCliente.Editar;
 begin
-  if TabCliente.RecordCount = 0 then
-    exit;
+    if TabCliente.RecordCount = 0 then
+        exit;
 
-  OpenCadCliente(TabCliente.FieldByName('id_cliente').AsInteger);
-  //OpenCadCliente(TabCliente.Fields[0].AsInteger);
+    bookmark := gridClientes.DataSource.DataSet.GetBookmark;
+    OpenCadCliente(TabCliente.FieldByName('id_cliente').AsInteger);
 end;
 
 procedure TFrmCliente.SpeedButton2Click(Sender: TObject);
 begin
-  Editar;
+    Editar;
 end;
 
 end.

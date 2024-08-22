@@ -1,6 +1,5 @@
 object DmCliente: TDmCliente
   OnCreate = DataModuleCreate
-  Height = 720
-  Width = 960
-  PixelsPerInch = 144
+  Height = 393
+  Width = 520
 end

@@ -10,7 +10,8 @@ uses
   UnitPedido in 'UnitPedido.pas' {FrmPedido},
   UnitCliente in 'UnitCliente.pas' {FrmCliente},
   UnitClienteCad in 'UnitClienteCad.pas' {FrmClienteCad},
-  DataModule.Cliente in 'DataModules\DataModule.Cliente.pas' {DmCliente: TDataModule};
+  DataModule.Cliente in 'DataModules\DataModule.Cliente.pas' {DmCliente: TDataModule},
+  DataModule.Usuario in 'DataModules\DataModule.Usuario.pas' {DmUsuario: TDataModule};
 
 {$R *.res}
 
@@ -19,5 +20,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFrmLogin, FrmLogin);
+  Application.CreateForm(TDmUsuario, DmUsuario);
   Application.Run;
 end.

@@ -32,11 +32,13 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnBuscaClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
   private
+    { Private declarations }
     procedure OpenCadCliente(id_cliente: integer);
     procedure RefreshClientes;
     procedure TerminateBusca(Sender: TObject);
-    { Private declarations }
+    procedure Editar;
   public
     { Public declarations }
   end;
@@ -52,7 +54,8 @@ uses UnitClienteCad, DataModule.Cliente;
 
 procedure TFrmCliente.OpenCadCliente(id_cliente: integer);
 begin
-    TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
+  TNavigation.ParamInt:= id_cliente;
+  TNavigation.OpenModal(TFrmClienteCad, FrmClienteCad);
 end;
 
 procedure TFrmCliente.btnBuscaClick(Sender: TObject);
@@ -80,6 +83,10 @@ procedure TFrmCliente.TerminateBusca(Sender: TObject);
 begin
   TLoading.Hide;
 
+  // Atualizar a DBGrid...
+  gridClientes.DataSource:= dsCliente;
+  //TabCliente.EnableControls;
+
   if Sender is TThread then
     if Assigned(TThread(Sender).FatalException) then
     begin
@@ -90,23 +97,32 @@ end;
 
 procedure TFrmCliente.RefreshClientes;
 begin
-  TLoading.Show(Self);
+  TLoading.Show;
   TLoading.ExecuteThread(procedure
   begin
-    sleep(5000);
+    sleep(1000);
 
     // Acessar o servidor...
+    //TabCliente.DisableControls;
     gridClientes.Datasource:= nil;
     DmCliente.ListarClientes(TabCliente, edtBusca.Text);
 
-    // Atualizar a DBGrid...
-    TThread.Synchronize(TThread.CurrentThread, procedure
-    begin
-      gridClientes.DataSource:= dsCliente;
-    end);
-
   end, TerminateBusca);
 
+end;
+
+procedure TFrmCliente.Editar;
+begin
+  if TabCliente.RecordCount = 0 then
+    exit;
+
+  OpenCadCliente(TabCliente.FieldByName('id_cliente').AsInteger);
+  //OpenCadCliente(TabCliente.Fields[0].AsInteger);
+end;
+
+procedure TFrmCliente.SpeedButton2Click(Sender: TObject);
+begin
+  Editar;
 end;
 
 end.
