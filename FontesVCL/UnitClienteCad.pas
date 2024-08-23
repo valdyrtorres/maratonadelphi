@@ -83,8 +83,9 @@ begin
             DmCliente.Inserir(edtNome.Text, edtEndereco.Text, edtComplemento.Text,
                               edtBairro.Text, edtCidade.Text, edtUF.Text)
         else
-            DmCliente.Editar(TNavigation.ParamInt, edtNome.Text, edtEndereco.Text,
-                              edtComplemento.Text, edtBairro.Text, edtCidade.Text, edtUF.Text);
+            DmCliente.Editar(TNavigation.ParamInt, edtNome.Text,
+                             edtEndereco.Text, edtComplemento.Text,
+                             edtBairro.Text, edtCidade.Text, edtUF.Text);
     end, TerminateSalvar);
 end;
 
@@ -122,7 +123,7 @@ begin
         TLoading.Show;
         TLoading.ExecuteThread(procedure
         begin
-            sleep(2000);
+            sleep(1000);
             DmCliente.ListarClienteId(TabClienteCad, TNavigation.ParamInt);
         end, TerminateLoad);
     end;

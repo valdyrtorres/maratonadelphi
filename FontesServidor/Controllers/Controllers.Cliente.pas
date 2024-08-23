@@ -18,8 +18,8 @@ begin
   THorse.Get('/clientes', Listar);
   THorse.Get('/clientes/:id_cliente', ListarId);
   THorse.Post('/clientes', Inserir);
-  THorse.Put('/clientes', Editar);
-  THorse.Delete('/clientes', Excluir);
+  THorse.Put('/clientes/:id_cliente', Editar);
+  THorse.Delete('/clientes/:id_cliente', Excluir);
 end;
 
 procedure Listar(Req: THorseRequest; Res: THorseResponse; Next: TProc);
