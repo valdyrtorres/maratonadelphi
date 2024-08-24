@@ -62,7 +62,7 @@ object FrmCliente: TFrmCliente
       Color = 6906591
       ParentBackground = False
       TabOrder = 0
-      object btnAcessar: TSpeedButton
+      object btnExcluir: TSpeedButton
         Left = 0
         Top = 0
         Width = 110
@@ -77,11 +77,9 @@ object FrmCliente: TFrmCliente
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        OnClick = btnAcessarClick
-        ExplicitLeft = 72
-        ExplicitTop = 8
-        ExplicitWidth = 23
-        ExplicitHeight = 22
+        OnClick = btnExcluirClick
+        ExplicitLeft = -9
+        ExplicitTop = 17
       end
     end
     object Panel2: TPanel
@@ -136,7 +134,7 @@ object FrmCliente: TFrmCliente
       Color = 16475988
       ParentBackground = False
       TabOrder = 2
-      object SpeedButton2: TSpeedButton
+      object btnEditar: TSpeedButton
         Left = 0
         Top = 0
         Width = 110
@@ -151,7 +149,7 @@ object FrmCliente: TFrmCliente
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        OnClick = SpeedButton2Click
+        OnClick = btnEditarClick
         ExplicitLeft = 72
         ExplicitTop = 8
         ExplicitWidth = 23

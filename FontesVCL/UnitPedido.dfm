@@ -15,6 +15,7 @@ object FrmPedido: TFrmPedido
   Position = poMainFormCenter
   WindowState = wsMaximized
   OnClose = FormClose
+  OnShow = FormShow
   TextHeight = 15
   object pHeader: TPanel
     Left = 0
@@ -62,7 +63,7 @@ object FrmPedido: TFrmPedido
       Color = 6906591
       ParentBackground = False
       TabOrder = 0
-      object btnAcessar: TSpeedButton
+      object btnExcluir: TSpeedButton
         Left = 0
         Top = 0
         Width = 110
@@ -77,6 +78,7 @@ object FrmPedido: TFrmPedido
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        OnClick = btnExcluirClick
         ExplicitLeft = 72
         ExplicitTop = 8
         ExplicitWidth = 23
@@ -98,7 +100,7 @@ object FrmPedido: TFrmPedido
       Color = 16475988
       ParentBackground = False
       TabOrder = 1
-      object SpeedButton1: TSpeedButton
+      object btnNovo: TSpeedButton
         Left = 0
         Top = 0
         Width = 110
@@ -113,6 +115,7 @@ object FrmPedido: TFrmPedido
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        OnClick = btnNovoClick
         ExplicitLeft = 72
         ExplicitTop = 8
         ExplicitWidth = 23
@@ -134,7 +137,7 @@ object FrmPedido: TFrmPedido
       Color = 16475988
       ParentBackground = False
       TabOrder = 2
-      object SpeedButton2: TSpeedButton
+      object btnEditar: TSpeedButton
         Left = 0
         Top = 0
         Width = 110
@@ -149,6 +152,7 @@ object FrmPedido: TFrmPedido
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        OnClick = btnEditarClick
         ExplicitLeft = 72
         ExplicitTop = 8
         ExplicitWidth = 23
@@ -200,6 +204,7 @@ object FrmPedido: TFrmPedido
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
+          OnClick = btnBuscaClick
           ExplicitLeft = 72
           ExplicitTop = 8
           ExplicitWidth = 23
@@ -228,7 +233,7 @@ object FrmPedido: TFrmPedido
       end
     end
   end
-  object DBGrid1: TDBGrid
+  object gridPedidos: TDBGrid
     Left = 0
     Top = 80
     Width = 1087
@@ -236,108 +241,129 @@ object FrmPedido: TFrmPedido
     Align = alClient
     BorderStyle = bsNone
     Color = clWhite
-    DataSource = DataSource1
-    Font.Charset = DEFAULT_CHARSET
+    DataSource = dsPedido
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Segoe UI'
-    Font.Style = []
+    Font.Height = -24
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
+    ReadOnly = True
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    OnDblClick = gridPedidosDblClick
     Columns = <
       item
         Expanded = False
-        FieldName = 'FDMemTable1Field1'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Title.Caption = 'Pedido'
+        FieldName = 'id_pedido'
+        Title.Caption = 'Id. Pedido'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -16
+        Title.Font.Height = -28
         Title.Font.Name = 'Segoe UI Semibold'
         Title.Font.Style = [fsBold]
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'FDMemTable1Field2'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
+        FieldName = 'nome'
         Title.Caption = 'Cliente'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -16
+        Title.Font.Height = -28
         Title.Font.Name = 'Segoe UI Semibold'
         Title.Font.Style = [fsBold]
-        Width = 250
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'FDMemTable1Field3'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Title.Caption = 'Endere'#231'o'
+        FieldName = 'cidade'
+        Title.Caption = 'Cidade'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -16
+        Title.Font.Height = -28
         Title.Font.Name = 'Segoe UI Semibold'
         Title.Font.Style = [fsBold]
-        Width = 349
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'FDMemTable1Field4'
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Title.Caption = 'Total'
+        FieldName = 'usuario'
+        Title.Caption = 'Usuario Cad.'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clWindowText
-        Title.Font.Height = -16
+        Title.Font.Height = -28
         Title.Font.Name = 'Segoe UI Semibold'
         Title.Font.Style = [fsBold]
-        Width = 91
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'dt_pedido'
+        Title.Alignment = taCenter
+        Title.Caption = 'Dt. Pedido'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -28
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Style = [fsBold]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'vl_total'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Vl. Total'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -28
+        Title.Font.Name = 'Segoe UI Semibold'
+        Title.Font.Style = [fsBold]
         Visible = True
       end>
   end
-  object FDMemTable1: TFDMemTable
+  object TabPedido: TFDMemTable
     FieldDefs = <
       item
-        Name = 'FDMemTable1Field1'
+        Name = 'id_pedido'
+        DataType = ftInteger
+      end
+      item
+        Name = 'id_usuario'
+        DataType = ftInteger
+      end
+      item
+        Name = 'id_cliente'
+        DataType = ftInteger
+      end
+      item
+        Name = 'dt_pedido'
+        DataType = ftDate
+      end
+      item
+        Name = 'vl_total'
+        DataType = ftCurrency
+      end
+      item
+        Name = 'nome'
         DataType = ftString
         Size = 20
       end
       item
-        Name = 'FDMemTable1Field2'
+        Name = 'cidade'
         DataType = ftString
         Size = 20
       end
       item
-        Name = 'FDMemTable1Field3'
+        Name = 'usuario'
         DataType = ftString
         Size = 20
-      end
-      item
-        Name = 'FDMemTable1Field4'
-        DataType = ftFloat
       end>
     IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
@@ -351,9 +377,34 @@ object FrmPedido: TFrmPedido
     StoreDefs = True
     Left = 616
     Top = 272
+    object TabPedidoid_pedido: TIntegerField
+      FieldName = 'id_pedido'
+    end
+    object TabPedidoid_usuario: TIntegerField
+      FieldName = 'id_usuario'
+    end
+    object TabPedidoid_cliente: TIntegerField
+      FieldName = 'id_cliente'
+    end
+    object TabPedidodt_pedido: TDateField
+      FieldName = 'dt_pedido'
+    end
+    object TabPedidovl_total: TFloatField
+      FieldName = 'vl_total'
+      currency = True
+    end
+    object TabPedidonome: TStringField
+      FieldName = 'nome'
+    end
+    object TabPedidocidade: TStringField
+      FieldName = 'cidade'
+    end
+    object TabPedidousuario: TStringField
+      FieldName = 'usuario'
+    end
   end
-  object DataSource1: TDataSource
-    DataSet = FDMemTable1
+  object dsPedido: TDataSource
+    DataSet = TabPedido
     Left = 728
     Top = 272
   end

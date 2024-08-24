@@ -2,8 +2,8 @@ object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Servidor Easy Pedido'
-  ClientHeight = 220
-  ClientWidth = 414
+  ClientHeight = 203
+  ClientWidth = 408
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -78,6 +78,7 @@ var
     id_usuario, id_cliente: integer;
     dt_pedido: string;
     vl_total: double;
+    itens: TJSONArray;
 begin
     try
         try
@@ -88,9 +89,11 @@ begin
             id_cliente := body.GetValue<integer>('id_cliente', 0);
             dt_pedido := body.GetValue<string>('dt_pedido', ''); // yyyy-mm-dd
             vl_total := body.GetValue<double>('vl_total', 0);
+            itens := body.GetValue<TJSONArray>('itens');
 
             Res.Send<TJsonObject>(Dm.PedidoInserir(id_usuario, id_cliente,
-                                                 dt_pedido, vl_total)).Status(201);
+                                                 dt_pedido, vl_total,
+                                                 itens)).Status(201);
 
         except on ex:exception do
             Res.Send('Ocorreu um erro: ' + ex.Message).Status(500);
@@ -107,6 +110,7 @@ var
     id_pedido, id_cliente: integer;
     dt_pedido: string;
     vl_total: double;
+    itens: TJSONArray;
 begin
     try
         try
@@ -125,9 +129,10 @@ begin
             id_cliente := body.GetValue<integer>('id_cliente', 0);
             dt_pedido := body.GetValue<string>('dt_pedido', ''); // yyyy-mm-dd
             vl_total := body.GetValue<double>('vl_total', 0);
+            itens := body.GetValue<TJSONArray>('itens');
 
             Res.Send<TJsonObject>(Dm.PedidoEditar(id_pedido, id_cliente,
-                                                  dt_pedido, vl_total));
+                                                  dt_pedido, vl_total, itens));
 
         except on ex:exception do
             Res.Send('Ocorreu um erro: ' + ex.Message).Status(500);

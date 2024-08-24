@@ -16,11 +16,11 @@ type
     pHeader: TPanel;
     Label4: TLabel;
     Panel1: TPanel;
-    btnAcessar: TSpeedButton;
+    btnExcluir: TSpeedButton;
     Panel2: TPanel;
     btnNovo: TSpeedButton;
     Panel3: TPanel;
-    SpeedButton2: TSpeedButton;
+    btnEditar: TSpeedButton;
     TabCliente: TFDMemTable;
     dsCliente: TDataSource;
     gridClientes: TDBGrid;
@@ -32,8 +32,8 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnBuscaClick(Sender: TObject);
-    procedure SpeedButton2Click(Sender: TObject);
-    procedure btnAcessarClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
     procedure gridClientesDblClick(Sender: TObject);
   private
     bookmark: TBookmark;
@@ -77,7 +77,7 @@ begin
     RefreshClientes;
 end;
 
-procedure TFrmCliente.btnAcessarClick(Sender: TObject);
+procedure TFrmCliente.btnExcluirClick(Sender: TObject);
 begin
     if TabCliente.RecordCount = 0 then
         exit;
@@ -167,7 +167,7 @@ begin
     OpenCadCliente(TabCliente.FieldByName('id_cliente').AsInteger);
 end;
 
-procedure TFrmCliente.SpeedButton2Click(Sender: TObject);
+procedure TFrmCliente.btnEditarClick(Sender: TObject);
 begin
     Editar;
 end;
