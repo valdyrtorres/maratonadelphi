@@ -1,0 +1,10 @@
+{
+	"id_cliente": 10,
+	"id_usuario": 1,
+	"dt_pedido": "2024-05-15",
+	"vl_total": 50,
+	"itens": [
+		{"id_produto": 1, "qtd": 2, "vl_unitario": 10, "vl_total": 20},
+		{"id_produto": 2, "qtd": 1, "vl_unitario": 30, "vl_total": 30}		
+	]
+}
