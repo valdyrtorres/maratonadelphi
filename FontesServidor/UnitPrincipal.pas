@@ -29,7 +29,8 @@ uses Horse,
      Controllers.Cliente,
      Controllers.Produto,
      Controllers.Usuario,
-     Controllers.Pedido;
+     Controllers.Pedido,
+     Controllers.Geral;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
@@ -40,6 +41,7 @@ begin
     Controllers.Produto.RegistrarRotas;
     Controllers.Usuario.RegistrarRotas;
     Controllers.Pedido.RegistrarRotas;
+    Controllers.Geral.RegistrarRotas;
 
     THorse.Listen(3000);
     lblServer.Caption := 'Servidor rodando na porta: ' + THorse.Port.ToString;

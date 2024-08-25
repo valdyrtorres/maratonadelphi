@@ -40,6 +40,7 @@ type
                            itens: TJSONArray): TJsonObject;
     function PedidoListar(filtro: string): TJsonArray;
     function PedidoListarId(id_pedido: integer): TJsonObject;
+    function PesquisaGlobal(tipo_pesquisa, filtro: string): TJsonArray;
   end;
 
 var
@@ -458,6 +459,15 @@ begin
     end;
 end;
 
-
+// tipo_pesquisa: produto, cliente, etc.
+function TDm.PesquisaGlobal(tipo_pesquisa, filtro: string): TJsonArray;
+begin
+  if tipo_pesquisa = 'cliente' then
+    Result:= ClienteListar(filtro)
+  else if tipo_pesquisa = 'produto' then
+    Result:= ProdutoListar(filtro)
+  else
+    raise Exception.Create('Tipo de pesquisa inválido');
+end;
 
 end.

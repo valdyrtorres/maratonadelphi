@@ -2,10 +2,19 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2024/08/23 18:10:44.000.881,=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.pas</Transaction>
-    <Transaction>2024/08/23 18:11:14.000.051,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\UnitPedidoCad.pas=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.pas</Transaction>
-    <Transaction>2024/08/23 18:11:14.000.051,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\UnitPedidoCad.dfm=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.dfm</Transaction>
+    <Transaction>2024/08/23 18:11:14.000.051,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.pas=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\UnitPedidoCad.pas</Transaction>
+    <Transaction>2024/08/23 18:11:14.000.051,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.dfm=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\UnitPedidoCad.dfm</Transaction>
     <Transaction>2024/08/23 19:42:47.000.113,=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.pas</Transaction>
-    <Transaction>2024/08/23 19:43:33.000.833,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\DataModules\DataModule.Pedido.pas=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.pas</Transaction>
-    <Transaction>2024/08/23 19:43:33.000.833,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\DataModules\DataModule.Pedido.dfm=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.dfm</Transaction>
+    <Transaction>2024/08/23 19:43:33.000.833,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.pas=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\DataModules\DataModule.Pedido.pas</Transaction>
+    <Transaction>2024/08/23 19:43:33.000.833,C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\Unit1.dfm=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesVCL\DataModules\DataModule.Pedido.dfm</Transaction>
+    <Transaction>2024/08/25 15:56:41.646,=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.pas</Transaction>
+    <Transaction>2024/08/25 15:56:59.151,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\UnitBusca.pas=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.pas</Transaction>
+    <Transaction>2024/08/25 15:57:45.155,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\UnitBusca.pas=</Transaction>
+    <Transaction>2024/08/25 15:58:32.730,=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.pas</Transaction>
+    <Transaction>2024/08/25 15:58:42.940,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\UnitBusca.dfm=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.dfm</Transaction>
+    <Transaction>2024/08/25 15:58:42.940,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\UnitBusca.pas=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.pas</Transaction>
+    <Transaction>2024/08/25 17:26:18.396,=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.pas</Transaction>
+    <Transaction>2024/08/25 17:26:46.144,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\DataModules\DataModule.Geral.pas=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.pas</Transaction>
+    <Transaction>2024/08/25 17:26:46.144,C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\DataModules\DataModule.Geral.dfm=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesVCL\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>

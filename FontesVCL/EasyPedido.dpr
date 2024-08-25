@@ -13,7 +13,9 @@ uses
   DataModule.Cliente in 'DataModules\DataModule.Cliente.pas' {DmCliente: TDataModule},
   DataModule.Usuario in 'DataModules\DataModule.Usuario.pas' {DmUsuario: TDataModule},
   UnitPedidoCad in 'UnitPedidoCad.pas' {FrmPedidoCad},
-  DataModule.Pedido in 'DataModules\DataModule.Pedido.pas' {DmPedido: TDataModule};
+  DataModule.Pedido in 'DataModules\DataModule.Pedido.pas' {DmPedido: TDataModule},
+  UnitBusca in 'UnitBusca.pas' {FrmBusca},
+  DataModule.Geral in 'DataModules\DataModule.Geral.pas' {DmGeral: TDataModule};
 
 {$R *.res}
 
@@ -25,5 +27,7 @@ begin
   Application.CreateForm(TDmUsuario, DmUsuario);
   Application.CreateForm(TFrmPedidoCad, FrmPedidoCad);
   Application.CreateForm(TDmPedido, DmPedido);
+  Application.CreateForm(TFrmBusca, FrmBusca);
+  Application.CreateForm(TDmGeral, DmGeral);
   Application.Run;
 end.

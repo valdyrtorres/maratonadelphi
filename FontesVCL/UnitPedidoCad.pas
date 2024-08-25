@@ -9,7 +9,8 @@ uses
   FireDAC.DApt.Intf, FireDAC.Stan.StorageBin, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Vcl.Navigation, vcl.Loading, DataModule.Pedido, Vcl.ComCtrls, Vcl.Grids,
-  Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, Vcl.Session, DataSet.Serialize;
+  Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls, Vcl.Session, DataSet.Serialize,
+  Vcl.Imaging.pngimage, UnitBusca;
 
 type
   TFrmPedidoCad = class(TForm)
@@ -60,10 +61,11 @@ type
     btnExcluir: TSpeedButton;
     Label4: TLabel;
     Label5: TLabel;
-    Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
+    imgBuscaCli: TImage;
+    imgBuscaProd: TImage;
     procedure btnCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -73,6 +75,8 @@ type
     procedure btnCancelarItemClick(Sender: TObject);
     procedure btnSalvarItemClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure imgBuscaCliClick(Sender: TObject);
+    procedure imgBuscaProdClick(Sender: TObject);
   private
     total: Double;
     procedure TerminateLoad(Sender: TObject);
@@ -229,6 +233,24 @@ begin
     end
     else
       TabItens.Active:= True;
+end;
+
+procedure TFrmPedidoCad.imgBuscaCliClick(Sender: TObject);
+begin
+  if NOT Assigned(FrmBusca) then
+    Application.CreateForm(TFrmBusca, FrmBusca);
+
+  FrmBusca.tipo_pesquisa:= 'cliente';
+  FrmBusca.Show;
+end;
+
+procedure TFrmPedidoCad.imgBuscaProdClick(Sender: TObject);
+begin
+  if NOT Assigned(FrmBusca) then
+    Application.CreateForm(TFrmBusca, FrmBusca);
+
+  FrmBusca.tipo_pesquisa:= 'produto';
+  FrmBusca.Show;
 end;
 
 end.

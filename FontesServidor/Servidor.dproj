@@ -139,6 +139,7 @@
         <DCCReference Include="Controllers\Controllers.Produto.pas"/>
         <DCCReference Include="Controllers\Controllers.Usuario.pas"/>
         <DCCReference Include="Utils\uMD5.pas"/>
+        <DCCReference Include="Controllers\Controllers.Geral.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

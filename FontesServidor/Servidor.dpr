@@ -8,7 +8,8 @@ uses
   Controllers.Pedido in 'Controllers\Controllers.Pedido.pas',
   Controllers.Produto in 'Controllers\Controllers.Produto.pas',
   Controllers.Usuario in 'Controllers\Controllers.Usuario.pas',
-  uMD5 in 'Utils\uMD5.pas';
+  uMD5 in 'Utils\uMD5.pas',
+  Controllers.Geral in 'Controllers\Controllers.Geral.pas';
 
 {$R *.res}
 
