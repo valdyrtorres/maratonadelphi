@@ -96,7 +96,7 @@ begin
                                                  itens)).Status(201);
 
         except on ex:exception do
-            Res.Send('Ocorreu um erro: ' + ex.Message).Status(500);
+            Res.Send('Controller - Inserir - Ocorreu um erro: ' + ex.Message).Status(500);
         end;
     finally
         FreeAndNil(Dm);
@@ -135,7 +135,7 @@ begin
                                                   dt_pedido, vl_total, itens));
 
         except on ex:exception do
-            Res.Send('Ocorreu um erro: ' + ex.Message).Status(500);
+            Res.Send('Controller - Editar - Ocorreu um erro: ' + ex.Message).Status(500);
         end;
     finally
         FreeAndNil(Dm);

@@ -362,8 +362,11 @@ begin
           qry.ParamByName('id_pedido').Value := id_pedido;
           qry.ParamByName('id_produto').Value := itens[i].GetValue<integer>('id_produto', 0);
           qry.ParamByName('qtd').Value := itens[i].GetValue<integer>('qtd', 0);  //yyyy-mm-dd
-          qry.ParamByName('vl_unitario').Value := itens[i].GetValue<integer>('vl_unitario', 0);
-          qry.ParamByName('vl_total').Value := itens[i].GetValue<integer>('vl_total', 0);
+          //qry.ParamByName('vl_unitario').Value := itens[i].GetValue<integer>('vl_unitario', 0);
+          //qry.ParamByName('vl_total').Value := itens[i].GetValue<integer>('vl_total', 0);
+
+          qry.ParamByName('vl_unitario').Value := itens[i].GetValue<double>('vl_unitario', 0);
+          qry.ParamByName('vl_total').Value := itens[i].GetValue<double>('vl_total', 0);
           qry.ExecSQL;
         end;
 
@@ -413,8 +416,12 @@ begin
           qry.ParamByName('id_pedido').Value := id_pedido;
           qry.ParamByName('id_produto').Value := itens[i].GetValue<integer>('id_produto', 0);
           qry.ParamByName('qtd').Value := itens[i].GetValue<integer>('qtd', 0);  //yyyy-mm-dd
-          qry.ParamByName('vl_unitario').Value := itens[i].GetValue<integer>('vl_unitario', 0);
-          qry.ParamByName('vl_total').Value := itens[i].GetValue<integer>('vl_total', 0);
+          //qry.ParamByName('vl_unitario').Value := itens[i].GetValue<integer>('vl_unitario', 0);
+          //qry.ParamByName('vl_total').Value := itens[i].GetValue<integer>('vl_total', 0);
+
+          qry.ParamByName('vl_unitario').Value := itens[i].GetValue<double>('vl_unitario', 0);
+          qry.ParamByName('vl_total').Value := itens[i].GetValue<double>('vl_total', 0);
+
           qry.ExecSQL;
         end;
 

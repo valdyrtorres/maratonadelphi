@@ -70,7 +70,7 @@ begin
 
     TLoading.ExecuteThread(procedure
     begin
-        Sleep(800);
+        //Sleep(800);
         DmUsuario.Login(TabUsuario, edtEmail.Text, edtSenha.Text);
     end,
     TerminateLogin);

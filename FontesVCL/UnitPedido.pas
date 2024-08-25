@@ -78,7 +78,7 @@ begin
         TLoading.Show;
         TLoading.ExecuteThread(procedure
         begin
-          //DmPedido.Excluir(TabPedido.FieldByName('id_cliente').AsInteger);
+          DmPedido.Excluir(TabPedido.FieldByName('id_pedido').AsInteger);
         end, TerminateDelete);
     end;
 end;
@@ -157,7 +157,7 @@ begin
 
     TLoading.ExecuteThread(procedure
     begin
-        sleep(800);
+        //sleep(800);
 
         // Acessar o servidor...
         gridPedidos.DataSource := nil;
