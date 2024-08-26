@@ -77,7 +77,7 @@ begin
 
     TLoading.ExecuteThread(procedure
     begin
-        sleep(800);
+        //sleep(800);
 
         if TNavigation.ParamInt = 0 then
             DmCliente.Inserir(edtNome.Text, edtEndereco.Text, edtComplemento.Text,
@@ -123,7 +123,7 @@ begin
         TLoading.Show;
         TLoading.ExecuteThread(procedure
         begin
-            sleep(1000);
+            //sleep(1000);
             DmCliente.ListarClienteId(TabClienteCad, TNavigation.ParamInt);
         end, TerminateLoad);
     end;

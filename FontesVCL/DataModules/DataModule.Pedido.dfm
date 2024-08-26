@@ -1,5 +1,6 @@
 object DmPedido: TDmPedido
   OnCreate = DataModuleCreate
-  Height = 266
-  Width = 438
+  Height = 399
+  Width = 657
+  PixelsPerInch = 144
 end

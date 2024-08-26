@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Classes, DataSet.Serialize.Config,
   RESTRequest4D, DataSet.Serialize.Adapter.RESTRequest4D,
-  FireDAC.Comp.Client, System.JSON;
+  FireDAC.Comp.Client, System.JSON, Vcl.Constants;
 
 type
   TDmUsuario = class(TDataModule)
@@ -43,7 +43,7 @@ begin
         json.AddPair('email', email);
         json.AddPair('senha', senha);
 
-        resp := TRequest.New.BaseURL('http://localhost:3000')
+        resp := TRequest.New.BaseURL(BASE_URL)
                         .Resource('/usuarios/login')
                         .AddBody(json.ToJSON)
                         .Accept('application/json')

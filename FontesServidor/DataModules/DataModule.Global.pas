@@ -64,7 +64,11 @@ begin
         // Mudar para sua pasta!!!!!!!!
         //Add('Database=D:\EasyPedido\FontesServidor\DB\banco.db');
         //Add('Database=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\DB\banco.db');
-        Add('Database=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesServidor\DB\banco.db');
+        if FileExists('E:\EasyPedido\DB\banco.db') then
+          Add('Database=E:\EasyPedido\DB\banco.db') // Server
+        else
+          Add('Database=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesServidor\DB\banco.db');
+
         Add('User_Name=');
         Add('Password=');
         Add('Port=');

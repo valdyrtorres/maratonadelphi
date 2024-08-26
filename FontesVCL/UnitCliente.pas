@@ -147,7 +147,7 @@ begin
 
     TLoading.ExecuteThread(procedure
     begin
-        sleep(800);
+        //sleep(800);
 
         // Acessar o servidor...
         //TabCliente.DisableControls;

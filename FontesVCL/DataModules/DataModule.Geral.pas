@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, DataSet.Serialize.Config,
   RESTRequest4D,
   DataSet.Serialize.Adapter.RESTRequest4D, FireDAC.Comp.Client,
-  System.JSON;
+  System.JSON, Vcl.Constants;
 
 type
   TDmGeral = class(TDataModule)
@@ -39,7 +39,7 @@ procedure TDmGeral.PesquisaGlobal(MemTable: TFDMemTable;
 var
     resp: IResponse;
 begin
-    resp := TRequest.New.BaseURL('http://localhost:3000')
+    resp := TRequest.New.BaseURL(BASE_URL)
                     .Resource('/pesquisas')
                     .ResourceSuffix(tipo_pesquisa)
                     .AddParam('filtro', filtro)

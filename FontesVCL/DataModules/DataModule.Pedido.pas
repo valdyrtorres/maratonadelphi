@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, DataSet.Serialize.Config,
   RESTRequest4D,
   DataSet.Serialize.Adapter.RESTRequest4D, FireDAC.Comp.Client,
-  System.JSON, DataSet.Serialize;
+  System.JSON, DataSet.Serialize, Vcl.Constants;
 
 type
   TDmPedido = class(TDataModule)
@@ -45,7 +45,7 @@ procedure TDmPedido.Listar(MemTable: TFDMemTable;
 var
     resp: IResponse;
 begin
-    resp := TRequest.New.BaseURL('http://localhost:3000')
+    resp := TRequest.New.BaseURL(BASE_URL)
                     .Resource('/pedidos')
                     .AddParam('filtro', filtro)
                     .Accept('application/json')
@@ -63,7 +63,7 @@ var
     json: TJSONObject;
     itens: TJSONArray;
 begin
-    resp := TRequest.New.BaseURL('http://localhost:3000')
+    resp := TRequest.New.BaseURL(BASE_URL)
                     .Resource('/pedidos')
                     .ResourceSuffix(id_pedido.ToString)
                     .Accept('application/json')
@@ -76,7 +76,7 @@ begin
     json:= TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(resp.Content), 0) as TJSONObject;
     itens:= json.GetValue<TJSONArray>('itens');
 
-    MemItens.LoadFromJSON(itens, false); // false para não destruir
+    MemItens.LoadFromJSON(itens, false); // false para nï¿½o destruir
     MemPed.LoadFromJSON(json);
 end;
 
@@ -96,7 +96,7 @@ begin
         json.AddPair('vl_total', vl_total);
         json.AddPair('itens', itens);
 
-        resp := TRequest.New.BaseURL('http://localhost:3000')
+        resp := TRequest.New.BaseURL(BASE_URL)
                         .Resource('/pedidos')
                         .AddBody(json.ToJSON)
                         .Accept('application/json')
@@ -124,7 +124,7 @@ begin
         json.AddPair('vl_total', vl_total);
         json.AddPair('itens', itens);
 
-        resp := TRequest.New.BaseURL('http://localhost:3000')
+        resp := TRequest.New.BaseURL(BASE_URL)
                         .Resource('/pedidos')
                         .ResourceSuffix(id_pedido.ToString)
                         .AddBody(json.ToJSON)
@@ -143,7 +143,7 @@ var
     resp: IResponse;
 begin
 
-  resp := TRequest.New.BaseURL('http://localhost:3000')
+  resp := TRequest.New.BaseURL(BASE_URL)
                         .Resource('/pedidos')
                         .ResourceSuffix(id_pedido.ToString)
                         .Accept('application/json')

@@ -1,5 +1,6 @@
 object DmUsuario: TDmUsuario
   OnCreate = DataModuleCreate
-  Height = 353
-  Width = 446
+  Height = 530
+  Width = 669
+  PixelsPerInch = 144
 end

@@ -15,7 +15,8 @@ uses
   UnitPedidoCad in 'UnitPedidoCad.pas' {FrmPedidoCad},
   DataModule.Pedido in 'DataModules\DataModule.Pedido.pas' {DmPedido: TDataModule},
   UnitBusca in 'UnitBusca.pas' {FrmBusca},
-  DataModule.Geral in 'DataModules\DataModule.Geral.pas' {DmGeral: TDataModule};
+  DataModule.Geral in 'DataModules\DataModule.Geral.pas' {DmGeral: TDataModule},
+  Vcl.Constants in 'Utils\Vcl.Constants.pas';
 
 {$R *.res}
 

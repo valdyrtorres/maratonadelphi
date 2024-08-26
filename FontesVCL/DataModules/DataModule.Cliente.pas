@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, DataSet.Serialize.Config,
   RESTRequest4D,
   DataSet.Serialize.Adapter.RESTRequest4D, FireDAC.Comp.Client,
-  System.JSON;
+  System.JSON, Vcl.Constants;
 
 type
   TDmCliente = class(TDataModule)
@@ -42,7 +42,7 @@ procedure TDmCliente.ListarClientes(MemTable: TFDMemTable;
 var
     resp: IResponse;
 begin
-    resp := TRequest.New.BaseURL('http://localhost:3000')
+    resp := TRequest.New.BaseURL(BASE_URL)
                     .Resource('/clientes')
                     .AddParam('filtro', filtro)
                     .Accept('application/json')
@@ -58,7 +58,7 @@ procedure TDmCliente.ListarClienteId(MemTable: TFDMemTable;
 var
     resp: IResponse;
 begin
-    resp := TRequest.New.BaseURL('http://localhost:3000')
+    resp := TRequest.New.BaseURL(BASE_URL)
                     .Resource('/clientes')
                     .ResourceSuffix(id_cliente.ToString)
                     .Accept('application/json')
@@ -84,7 +84,7 @@ begin
         json.AddPair('cidade', cidade);
         json.AddPair('uf', uf);
 
-        resp := TRequest.New.BaseURL('http://localhost:3000')
+        resp := TRequest.New.BaseURL(BASE_URL)
                         .Resource('/clientes')
                         .AddBody(json.ToJSON)
                         .Accept('application/json')
@@ -113,7 +113,7 @@ begin
         json.AddPair('cidade', cidade);
         json.AddPair('uf', uf);
 
-        resp := TRequest.New.BaseURL('http://localhost:3000')
+        resp := TRequest.New.BaseURL(BASE_URL)
                         .Resource('/clientes')
                         .ResourceSuffix(id_cliente.ToString)
                         .AddBody(json.ToJSON)
@@ -131,7 +131,7 @@ procedure TDmCliente.Excluir(id_cliente: integer);
 var
     resp: IResponse;
 begin
-    resp := TRequest.New.BaseURL('http://localhost:3000')
+    resp := TRequest.New.BaseURL(BASE_URL)
                     .Resource('/clientes')
                     .ResourceSuffix(id_cliente.ToString)
                     .Accept('application/json')
