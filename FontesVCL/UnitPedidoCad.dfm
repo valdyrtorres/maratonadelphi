@@ -539,9 +539,9 @@ object FrmPedidoCad: TFrmPedidoCad
   end
   object pItem: TPanel
     Left = 8
-    Top = 68
+    Top = 20
     Width = 682
-    Height = 373
+    Height = 492
     Color = clWhite
     ParentBackground = False
     TabOrder = 6
@@ -849,7 +849,7 @@ object FrmPedidoCad: TFrmPedidoCad
       ParentFont = False
       TabOrder = 3
     end
-    object DBEdit3: TDBEdit
+    object edtQtd: TDBEdit
       Left = 385
       Top = 188
       Width = 73
@@ -863,8 +863,9 @@ object FrmPedidoCad: TFrmPedidoCad
       Font.Style = []
       ParentFont = False
       TabOrder = 4
+      OnExit = edtQtdExit
     end
-    object DBEdit4: TDBEdit
+    object edtUnitario: TDBEdit
       Left = 464
       Top = 188
       Width = 90
@@ -879,7 +880,7 @@ object FrmPedidoCad: TFrmPedidoCad
       ParentFont = False
       TabOrder = 5
     end
-    object DBEdit5: TDBEdit
+    object edtTotal: TDBEdit
       Left = 560
       Top = 188
       Width = 96

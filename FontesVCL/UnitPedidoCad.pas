@@ -50,9 +50,9 @@ type
     btnCancelarItem: TSpeedButton;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
+    edtQtd: TDBEdit;
+    edtUnitario: TDBEdit;
+    edtTotal: TDBEdit;
     Panel3: TPanel;
     btnNovo: TSpeedButton;
     Panel6: TPanel;
@@ -77,11 +77,17 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure imgBuscaCliClick(Sender: TObject);
     procedure imgBuscaProdClick(Sender: TObject);
+    procedure edtQtdExit(Sender: TObject);
   private
     total: Double;
     procedure TerminateLoad(Sender: TObject);
     procedure CalcularTotal;
     procedure TerminateSalvar(Sender: TObject);
+    procedure SelecionarProduto(id_produto: integer; descricao: string;
+      preco: double);
+    procedure SelecionarCliente(id_cliente: integer; nome: string;
+      extra: double);
+    procedure CalcularTotalItem;
     { Private declarations }
   public
     { Public declarations }
@@ -144,8 +150,14 @@ end;
 
 procedure TFrmPedidoCad.btnNovoClick(Sender: TObject);
 begin
+  TabItens.Active:= True;
+
   TabItens.Append;
+  TabItens.FieldByName('qtd').AsInteger:= 1;
+  TabItens.FieldByName('vl_unitario').AsFloat:= 0;
+  TabItens.FieldByName('vl_total').AsFloat:= 1;
   pItem.Visible:= True;
+  edtQtd.SetFocus;
 end;
 
 procedure TFrmPedidoCad.TerminateSalvar(Sender: TObject);
@@ -240,8 +252,48 @@ begin
   if NOT Assigned(FrmBusca) then
     Application.CreateForm(TFrmBusca, FrmBusca);
 
+  FrmBusca.ExecuteOnClose:= SelecionarCliente;
   FrmBusca.tipo_pesquisa:= 'cliente';
   FrmBusca.Show;
+end;
+
+procedure TFrmPedidoCad.SelecionarProduto(id_produto: integer;
+                                          descricao: string;
+                                          preco: double);
+begin
+  TabItens.FieldByName('id_produto').AsInteger:= id_produto;
+  TabItens.FieldByName('descricao').AsString:= descricao;
+  TabItens.FieldByName('vl_unitario').AsFloat:= preco;
+
+  CalcularTotalItem;
+  edtUnitario.SetFocus;
+end;
+
+procedure TFrmPedidoCad.SelecionarCliente(id_cliente: integer;
+                                          nome: string;
+                                          extra: double);
+begin
+  edtIdCliente.Text:= id_cliente.ToString;
+  edtCliente.Text:= nome;
+  //TabPedidoCad.FieldByName('vl_unitario').AsFloat:= preco;
+
+  //CalcularTotalItem;
+end;
+
+procedure  TFrmPedidoCad.CalcularTotalItem;
+begin
+  try
+    TabItens.FieldByName('vl_total').AsFloat:=
+      TabItens.FieldByName('qtd').AsInteger *
+      TabItens.FieldByName('vl_unitario').AsFloat;
+  except
+    TabItens.FieldByName('vl_total').AsFloat:= 0;
+  end;
+end;
+
+procedure TFrmPedidoCad.edtQtdExit(Sender: TObject);
+begin
+  CalcularTotalItem;
 end;
 
 procedure TFrmPedidoCad.imgBuscaProdClick(Sender: TObject);
@@ -249,6 +301,7 @@ begin
   if NOT Assigned(FrmBusca) then
     Application.CreateForm(TFrmBusca, FrmBusca);
 
+  FrmBusca.ExecuteOnClose:= SelecionarProduto;
   FrmBusca.tipo_pesquisa:= 'produto';
   FrmBusca.Show;
 end;

@@ -53,9 +53,6 @@ object FrmBusca: TFrmBusca
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 5
-    ExplicitTop = 5
-    ExplicitWidth = 544
     object Panel7: TPanel
       AlignWithMargins = True
       Left = 598
@@ -71,9 +68,6 @@ object FrmBusca: TFrmBusca
       Color = 16475988
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 283
-      ExplicitTop = 20
-      ExplicitHeight = 40
       object btnBusca: TSpeedButton
         Left = 0
         Top = 0
@@ -114,8 +108,6 @@ object FrmBusca: TFrmBusca
       Font.Style = []
       ParentFont = False
       TabOrder = 1
-      ExplicitTop = 20
-      ExplicitWidth = 283
       ExplicitHeight = 38
     end
   end
@@ -126,8 +118,6 @@ object FrmBusca: TFrmBusca
     Height = 64
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 416
-    ExplicitWidth = 640
     DesignSize = (
       728
       64)
@@ -146,7 +136,6 @@ object FrmBusca: TFrmBusca
       Color = 14869218
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 520
       object btnCancelar: TSpeedButton
         Left = 0
         Top = 0
@@ -182,7 +171,6 @@ object FrmBusca: TFrmBusca
       Color = 16475988
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 395
       object btnSelecionar: TSpeedButton
         Left = 0
         Top = 0

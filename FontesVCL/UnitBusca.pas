@@ -11,6 +11,8 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
+  TExecuteOnClose = procedure(id: integer; descricao: string; extra: double) of object;
+
   TFrmBusca = class(TForm)
     pBusca: TPanel;
     Panel7: TPanel;
@@ -40,6 +42,7 @@ type
   public
     { Public declarations }
     tipo_pesquisa: string;
+    ExecuteOnClose: TExecuteOnClose;
   end;
 
 var
@@ -97,6 +100,11 @@ begin
     col.FieldName:= 'nome';
     col.Title.Caption:= 'Nome';
     col.width:= 550;
+
+    campo_id:= 'id_cliente';
+    campo_descricao:= 'nome';
+    campo_extra:= 'id_cliente';
+
   end
   else
   if tipo_pesquisa = 'produto' then
@@ -113,13 +121,17 @@ begin
 
     col:= grid.Columns.Add;
     col.FieldName:= 'descricao';
-    col.Title.Caption:= 'Descrição';
+    col.Title.Caption:= 'Descriï¿½ï¿½o';
     col.width:= 500;
 
     col:= grid.Columns.Add;
     col.FieldName:= 'preco';
-    col.Title.Caption:= 'Preço';
+    col.Title.Caption:= 'Preï¿½o';
     col.width:= 100;
+
+    campo_id:= 'id_produto';
+    campo_descricao:= 'descricao';
+    campo_extra:= 'preco';
   end;
 end;
 
@@ -134,8 +146,10 @@ begin
   if TabBusca.RecordCount = 0 then
     exit;
 
-  ShowMessage(TabBusca.FieldByName('id_cliente').AsString +
-              '-' + TabBusca.FieldByName('nome').AsString);
+  if Assigned(ExecuteOnClose) then
+    ExecuteOnClose(TabBusca.FieldByName(campo_id).AsInteger,
+                   TabBusca.FieldByName(campo_descricao).AsString,
+                   TabBusca.FieldByName(campo_extra).AsFloat);
 
   close;
 end;

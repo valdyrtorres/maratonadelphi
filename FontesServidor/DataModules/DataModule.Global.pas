@@ -63,8 +63,8 @@ begin
 
         // Mudar para sua pasta!!!!!!!!
         //Add('Database=D:\EasyPedido\FontesServidor\DB\banco.db');
-        Add('Database=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\DB\banco.db');
-        //Add('Database=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesServidor\DB\banco.db');
+        //Add('Database=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\DB\banco.db');
+        Add('Database=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesServidor\DB\banco.db');
         Add('User_Name=');
         Add('Password=');
         Add('Port=');
@@ -467,7 +467,7 @@ begin
   else if tipo_pesquisa = 'produto' then
     Result:= ProdutoListar(filtro)
   else
-    raise Exception.Create('Tipo de pesquisa inválido');
+    raise Exception.Create('Tipo de pesquisa invï¿½lido');
 end;
 
 end.
