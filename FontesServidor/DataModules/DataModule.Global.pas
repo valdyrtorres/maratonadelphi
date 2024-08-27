@@ -1,4 +1,4 @@
-unit DataModule.Global;
+﻿unit DataModule.Global;
 
 interface
 
@@ -64,7 +64,9 @@ begin
         // Mudar para sua pasta!!!!!!!!
         //Add('Database=D:\EasyPedido\FontesServidor\DB\banco.db');
         //Add('Database=C:\VALDIR\devcode\delphi\delphi12\projects\EasyPedido\FontesServidor\DB\banco.db');
-        if FileExists('E:\EasyPedido\DB\banco.db') then
+        if FileExists('C:\EasyPedido\DB\banco.db') then
+          Add('Database=C:\EasyPedido\DB\banco.db') // Server
+        else if FileExists('E:\EasyPedido\DB\banco.db') then
           Add('Database=E:\EasyPedido\DB\banco.db') // Server
         else
           Add('Database=C:\Users\valdirtorres\devcode\delphi\delphi12\maratonadelphi\FontesServidor\DB\banco.db');

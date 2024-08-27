@@ -1,7 +1,8 @@
 object Dm: TDm
   OnCreate = DataModuleCreate
-  Height = 265
-  Width = 416
+  Height = 398
+  Width = 624
+  PixelsPerInch = 144
   object Conn: TFDConnection
     Params.Strings = (
       
@@ -11,11 +12,11 @@ object Dm: TDm
       'DriverID=SQLite')
     LoginPrompt = False
     BeforeConnect = ConnBeforeConnect
-    Left = 32
-    Top = 24
+    Left = 48
+    Top = 36
   end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 160
-    Top = 32
+    Left = 240
+    Top = 48
   end
 end
